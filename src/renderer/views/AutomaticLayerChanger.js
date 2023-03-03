@@ -75,7 +75,7 @@ class AutomaticLayerChanger extends React.Component {
 
   async test() {
     const tl = new TaskList();
-    let tasks = await tl.getTasksList();
+    let tasks = await tl.getTasksList(); 
   }
 
   render() {
