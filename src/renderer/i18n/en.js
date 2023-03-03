@@ -59,6 +59,7 @@ const English = {
       welcome: "Welcome",
       editor: "Layout <br>Editor",
       macros: "Macro <br>Editor",
+      autolayerchanger: "Automatic Layer <br>Editor",
       superkeys: "Superkeys <br>Editor",
       firmwareUpdate: "Firmware <br>Update",
       keyboardSettings: "Keyboard Settings",
@@ -148,6 +149,9 @@ const English = {
       SpaceCadet: "SpaceCadet",
       Blank: "Blank",
       "Unknown keycodes": "Unknown keycodes"
+    },
+    autolayerchanger: {
+      test: "Test"
     },
     macros: {
       actions: "Actions",

@@ -280,6 +280,16 @@ class MainMenu extends Component {
                         />
                       </Link>
 
+                      <Link to="/autolayerchanger" className="list-link">
+                        <NavigationButton
+                          selected={currentPage === "/autolayerchanger"}
+                          drawerWidth={drawerWidth}
+                          onClick={() => setCurrentPage("/autolayerchanger")}
+                          buttonText={"Auto Layer changer"}
+                          icoSVG={<IconRobot2Stroke />}
+                        />
+                      </Link>
+
                       <Link to="/superkeys" className="list-link">
                         <NavigationButton
                           selected={currentPage === "/superkeys"}

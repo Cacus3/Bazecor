@@ -243,6 +243,15 @@ class NavigationMenu extends Component {
                           disabled={fwUpdate}
                         />
                       </Link>
+                      <Link to="/autolayerchanger" className={`list-link ${fwUpdate ? "disabled" : ""}`}>
+                        <NavigationButton
+                          selected={currentPage === "/autolayerchanger"}
+                          drawerWidth={drawerWidth}
+                          buttonText={i18n.app.menu.autolayerchanger}
+                          icoSVG={<IconRobot2Stroke />}
+                          disabled={fwUpdate}
+                        />
+                      </Link>
                       <Link to="/superkeys" className={`list-link ${fwUpdate ? "disabled" : ""}`}>
                         <NavigationButton
                           selected={currentPage === "/superkeys"}

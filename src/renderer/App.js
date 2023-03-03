@@ -41,6 +41,7 @@ import MacroEditor from "./views/MacroEditor";
 import SuperkeysEditor from "./views/SuperkeysEditor";
 import Preferences from "./views/Preferences";
 import Welcome from "./views/Welcome";
+import AutomaticLayerChanger from "./views/AutomaticLayerChanger";
 
 import Header from "./modules/NavigationMenu";
 import ToastMessage from "./component/ToastMessage";
@@ -361,6 +362,14 @@ class App extends React.Component {
             />
             <MacroEditor
               path="/macros"
+              onDisconnect={this.onKeyboardDisconnect}
+              startContext={this.startContext}
+              cancelContext={this.cancelContext}
+              inContext={contextBar}
+              titleElement={() => document.querySelector("#page-title")}
+            />
+            <AutomaticLayerChanger
+              path="/autolayerchanger"
               onDisconnect={this.onKeyboardDisconnect}
               startContext={this.startContext}
               cancelContext={this.cancelContext}
