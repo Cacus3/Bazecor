@@ -209,7 +209,7 @@ class AutomaticLayerChanger extends React.Component {
                     console.log(v);
                     STL.layer = v;
                   }}
-                  value={layers[STL.layer]}
+                  value={layers[STL.layer].text}
                   listElements={layers}
                 />
               </Col>
