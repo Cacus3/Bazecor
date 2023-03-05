@@ -91,7 +91,7 @@ async function createMainWindow() {
       })
     );
   }
-  window.webContents.openDevTools();
+
   window.once("ready-to-show", () => {
     window.show();
   });

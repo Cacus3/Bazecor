@@ -59,7 +59,7 @@ const English = {
       welcome: "Welcome",
       editor: "Layout <br>Editor",
       macros: "Macro <br>Editor",
-      autolayerchanger: "Automatic Layer <br>Editor",
+      autolayerchanger: "Automatic Layer <br> Changer",
       superkeys: "Superkeys <br>Editor",
       firmwareUpdate: "Firmware <br>Update",
       keyboardSettings: "Keyboard Settings",
@@ -151,7 +151,9 @@ const English = {
       "Unknown keycodes": "Unknown keycodes"
     },
     autolayerchanger: {
-      test: "Test"
+      addNewRow: "Add new service",
+      remove: "Remove",
+      callout: "<p>In Automatic Layer Changes u can set a layer change upon a service is started</p>"
     },
     macros: {
       actions: "Actions",
