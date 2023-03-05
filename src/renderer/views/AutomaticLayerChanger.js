@@ -139,6 +139,7 @@ class AutomaticLayerChanger extends React.Component {
     this.deleteRow = this.deleteRow.bind(this);
     this.setServiceName = this.setServiceName.bind(this);
     this.getLayersNames = this.getLayersNames.bind(this);
+    this.setLayer = this.setLayer.bind(this);
   }
 
   showOpenFileDlg = id => {
@@ -179,6 +180,15 @@ class AutomaticLayerChanger extends React.Component {
     store.set("STLs", STLs);
   }
 
+  async setLayer(index, value) {
+    let STLs = this.state.STLs;
+    STLs[index].layer = value;
+    this.setState({
+      STLs
+    });
+    store.set("STLs", STLs);
+  }
+
   getLayersNames() {
     const neurons = store.get("neurons");
     let layersNames = neurons[0].layers;
@@ -206,8 +216,7 @@ class AutomaticLayerChanger extends React.Component {
               <Col xs={5} className="px-5 gridded">
                 <Select
                   onSelect={v => {
-                    console.log(v);
-                    STL.layer = v;
+                    this.setLayer(id, v);
                   }}
                   value={layers[STL.layer].text}
                   listElements={layers}
