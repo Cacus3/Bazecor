@@ -110,6 +110,13 @@ const Styles = Styled.div`
   }
 }
 
+.layerChangerButtonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%
+}
+
 .layerChangerDeleteButton {
   width: 24px;
   height: 24px;
@@ -124,6 +131,14 @@ const Styles = Styled.div`
   &:hover {
       cursor: pointer;
   }
+}
+
+.dropdown-toggle{
+  text-align: left;
+  padding: 0px;
+  width: 100%;
+  overflow-y: visible;
+  border: 1px solid ${({ theme }) => theme.colors.button.disabled};;
 }
 `;
 
@@ -162,7 +177,7 @@ class AutomaticLayerChanger extends React.Component {
     //const tl = new TaskList();
     // let tasks = await tl.getTasksList();
     let STLs = this.state.STLs;
-    STLs.push({ layer: STLs.length, service: "test.exe" });
+    STLs.push({ layer: STLs.length, service: "Select service (*.exe file)" });
     this.setState({
       STLs
     });
@@ -201,19 +216,17 @@ class AutomaticLayerChanger extends React.Component {
   render() {
     const { currentLanguageLayout, STLs } = this.state;
     const layers = this.getLayersNames();
-    console.log(layers);
     const STLList = STLs.map((STL, id) => {
       return (
         <div className={`wrapper`} key={id}>
           <div className={`layerChangerRow`}>
             <Row>
               <Col xs={5} className="px-5 gridded">
-                <p
-                  style={{ marginTop: "0", marginBottom: "0" }}
-                  onClick={() => this.showOpenFileDlg(id)}
-                >{`Service: ${STL.service}`}</p>
+                <p style={{ marginTop: "0", marginBottom: "0" }} onClick={() => this.showOpenFileDlg(id)}>{`Service: `}</p>
+                <RegularButton buttonText={STL.service} size="sm" style="outline" onClick={() => this.showOpenFileDlg(id)} />
               </Col>
               <Col xs={5} className="px-5 gridded">
+                <p style={{ marginTop: "0", marginBottom: "0" }}>Layer: </p>
                 <Select
                   onSelect={v => {
                     this.setLayer(id, v);
